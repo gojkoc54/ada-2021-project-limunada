@@ -205,9 +205,14 @@ gender_label_dict = map_qids_to_labels(gender_qids, wiki_client)
 
 gender_label_dict
 
+OVERWRITE_EXISTING = False
+
 # Save the mapping
-with open('/content/drive/MyDrive/Quotebank_limunADA/genders_qids_labels.json', 'w') as f:
-    json.dump(gender_label_dict, f)
+genders_save_path = '/content/drive/MyDrive/Quotebank_limunADA/genders_qids_labels.json'
+
+if OVERWRITE_EXISTING or not os.path.isfile(genders_save_path):
+  with open(, 'w') as f:
+      json.dump(gender_label_dict, f)
 
 """### Get **occupations** QID-label mapping"""
 
@@ -219,45 +224,50 @@ occupation_label_dict = map_qids_to_labels(occupation_qids, wiki_client)
 
 occupation_label_dict
 
+OVERWRITE_EXISTING = False
+
 # Save the mapping
-with open('/content/drive/MyDrive/Quotebank_limunADA/occupations_qids_labels.json', 'w') as f:
-    json.dump(occupation_label_dict, f)
+occupations_save_path = '/content/drive/MyDrive/Quotebank_limunADA/occupations_qids_labels.json'
 
-"""### Religions"""
+if OVERWRITE_EXISTING or not os.path.isfile(occupations_save_path):
+  with open(occupations_save_path, 'w') as f:
+      json.dump(occupation_label_dict, f)
 
-religion_series = speaker_attributes['religion'].to_frame().apply(
-    return_string_from_arr, axis=1
-    )
+"""### Get **religions** QID-label mapping"""
 
-religions = {}
+print('Getting QIDs set')
+religion_qids = get_qid_set(speaker_attributes, 'religion')
 
-religion_ids = religion_series.unique()
-for ids in religion_ids:
-  if ids == '':
-    continue
-  for id in ids.split(','):
-    if id not in religions:
-      religions[id] = str(client.get(id, load=True).label)
+print('Getting labels from Wikidata')
+religion_label_dict = map_qids_to_labels(religion_qids, wiki_client)
 
-with open('/content/drive/MyDrive/religions.json', 'w') as f:
-    json.dump(religions, f)
+religion_label_dict
 
-"""### Nationality"""
+OVERWRITE_EXISTING = False
 
-nationality_series = speaker_attributes['nationality'].to_frame().apply(
-    return_string_from_arr, axis=1
-    )
+# Save the mapping
+religions_save_path = '/content/drive/MyDrive/Quotebank_limunADA/religions_qids_labels.json'
 
-nationalities = {}
+if OVERWRITE_EXISTING or not os.path.isfile(religions_save_path):
+  with open(religions_save_path, 'w') as f:
+      json.dump(religion_label_dict, f)
 
-nationality_ids = n_series.unique()
-for ids in nationality_ids:
-  if ids == '':
-    continue
-  for id in ids.split(','):
-    if id not in religions:
-      religions[id] = str(client.get(id, load=True).label)
+"""### Get **nationality** QID-label mapping"""
 
-with open('religions.json', 'w') as f:
-    json.dump(religions, f)
+print('Getting QIDs set')
+nationality_qids = get_qid_set(speaker_attributes, 'nationality')
+
+print('Getting labels from Wikidata')
+nationality_label_dict = map_qids_to_labels(nationality_qids, wiki_client)
+
+nationality_label_dict
+
+OVERWRITE_EXISTING = False
+
+# Save the mapping
+nationality_save_path = '/content/drive/MyDrive/Quotebank_limunADA/nationalities_qids_labels.json'
+
+if OVERWRITE_EXISTING or not os.path.isfile(nationality_save_path):
+  with open(nationality_save_path, 'w') as f:
+      json.dump(nationality_label_dict, f)
 
