@@ -27,6 +27,7 @@ import matplotlib.pyplot as plt
 import json
 import os
 import bz2
+import itertools 
 
 # Import NLP library
 import aspect_based_sentiment_analysis as absa
@@ -203,7 +204,7 @@ gender_qids = get_qid_set(speaker_attributes, 'gender')
 print('Getting labels from Wikidata')
 gender_label_dict = map_qids_to_labels(gender_qids, wiki_client)
 
-gender_label_dict
+dict(itertools.islice(gender_label_dict.items(), 10))
 
 OVERWRITE_EXISTING = False
 
@@ -222,7 +223,7 @@ occupation_qids = get_qid_set(speaker_attributes, 'occupation')
 print('Getting labels from Wikidata')
 occupation_label_dict = map_qids_to_labels(occupation_qids, wiki_client)
 
-occupation_label_dict
+dict(itertools.islice(occupation_label_dict.items(), 10))
 
 OVERWRITE_EXISTING = False
 
@@ -241,7 +242,7 @@ religion_qids = get_qid_set(speaker_attributes, 'religion')
 print('Getting labels from Wikidata')
 religion_label_dict = map_qids_to_labels(religion_qids, wiki_client)
 
-religion_label_dict
+dict(itertools.islice(religion_label_dict.items(), 10))
 
 OVERWRITE_EXISTING = False
 
@@ -260,7 +261,7 @@ nationality_qids = get_qid_set(speaker_attributes, 'nationality')
 print('Getting labels from Wikidata')
 nationality_label_dict = map_qids_to_labels(nationality_qids, wiki_client)
 
-nationality_label_dict
+dict(itertools.islice(nationality_label_dict.items(), 10))
 
 OVERWRITE_EXISTING = False
 
@@ -270,4 +271,3 @@ nationality_save_path = '/content/drive/MyDrive/Quotebank_limunADA/nationalities
 if OVERWRITE_EXISTING or not os.path.isfile(nationality_save_path):
   with open(nationality_save_path, 'w') as f:
       json.dump(nationality_label_dict, f)
-
