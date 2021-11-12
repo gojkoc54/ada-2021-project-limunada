@@ -28,6 +28,8 @@ Spreaker attributes that are of the greatest interest for our research are date 
 
 (demonstrated in notebook **_basic_cleaning_and_filtering_**)
 
+Here we demonstrate the project milestones and methods we used to get the solutions to the mentioned milestones:
+
 - Filter out the quotations from the years of interest
 - Drop quotations with the most probable speaker being unidentified
 - The mapping between the speaker and Wikidata Qid may not be unique in the Quotebank dataset; Evaluate different approaches for disambiguation:
