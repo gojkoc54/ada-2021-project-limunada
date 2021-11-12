@@ -4,7 +4,7 @@ Assessing the stance of US politicians on the major problems
 
 ## Abstract
 
-Quotebank is a dataset that contains more than 178M quotations extracted from English articles. Dataset of such size could be utilized for the detection of the most popular and influential topics during different periods of time. Furthermore, categorization into the fixed number of areas may be performed (healthcare, drug addiction, education, economy, climate change, racism, illegal immigration, terrorism, sexism, unemployment) in order to analyze the topics on a higher level. The stance on such topics taking into account the political party, age, nationality, academic degree, and other features, may be further assessed using sentiment analysis. The obtained results will be finally compared with the previous social research [1] on the views of major US problems of 2019 depending on the previously mentioned indicators.
+Quotebank is a dataset that contains more than 178M quotations extracted from English articles. Dataset of such size could be utilized for the detection of the most popular and influential topics during different periods of time. Furthermore, categorization into the fixed number of areas may be performed (healthcare, drug addiction, education, economy, climate change, racism, illegal immigration, terrorism, sexism, unemployment) in order to analyze the topics on a higher level. The stance on such topics taking into account the political party, age, nationality, academic degree, and other features, may be further assessed using sentiment analysis. The obtained results will be finally compared with the previous social/political research [1] on the views of major US problems of 2019 depending on the previously mentioned indicators.
 
 ## Research question
 
@@ -20,26 +20,30 @@ Quotebank is a dataset that contains more than 178M quotations extracted from En
 
 **_Wikidata_**
 
-Spreaker attributes that are of the greatest importance are date of birth, occupation, party, academic degree, nationality, and religion. Wikidata will be used for this purpose in order to enrich Quotebank data. Wikidata will be used in the form of a precomputed dataset provided by the ADA staff or using the Wikidata API.
+Spreaker attributes that are of the greatest interest for our research are date of birth, occupation, political party, academic degree, nationality, and religion. Wikidata will be used for this purpose in order to enrich Quotebank data. It will be used in the form of a precomputed dataset provided by the ADA staff or using the Wikidata API.
 
 ## Milestones and methods
 
-**_Data cleaning and initial filtering_**
+**_Data cleaning and initial filtering_** 
+
+(demonstrated in notebook **_basic_cleaning_and_filtering_**)
 
 - Filter out the quotations from the years of interest
 - Drop quotations with the most probable speaker being unidentified
-- The mapping between the speaker and Wikidata Qid may not be unique in the Quotebank dataset; evaluate different approaches for disambiguation:
+- The mapping between the speaker and Wikidata Qid may not be unique in the Quotebank dataset; Evaluate different approaches for disambiguation:
   - Exclude all such speakers
   - Take the Qid with the smallest value (more influential people are more likely to have been given Qid earlier)
   - Use some other heuristic (e.g. take the first Qid)
-- Consider removing near-duplicates
+- Consider removing near-duplicates of quotations
 
 **_Data augmentation and final filtering_**
+
+(demonstrated in notebook **_basic_cleaning_and_filtering_**)
 
 - Enrich Quotebank dataset with features from Wikidata: add speaker&#39;s age, nationality, political party (at the time of the quote), academic degree, ethnicity, etc.
 - Filter out the quotations from political figures from the Democratic and Republican parties
 
-**_Extracting keywords_**
+**_Keywords extraction_**
 
 - Extracting _k_ most important keywords of all quotations using _KeyBERT_ [2] (demonstrated in notebook **_keywords_**)
   - Take different values of _k_ into consideration, as well as the possibility of extracting n-grams instead of single words
@@ -70,15 +74,15 @@ Spreaker attributes that are of the greatest importance are date of birth, occup
 
 ## Proposed timeline
 
-The planned work on the project has been divided into 4 weeks and shown in the table.
+The planned work on the project has been divided into 4 weeks and is shown in the table.
 
 | Week | Milestone | Responsibility \* |
 | --- | --- | --- |
 | 1 | Data cleaning and initial filtering | J, M |
-| 2 | Data augmentation and final filtering | V, G |
-| 2 | Extracting keywords | V |
-| 3, 4 | Data analysis | Clustering, Sentiment analysis: J, G; Keyword frequency: V, M; Examples to compare from a study: J, G, M, V |
-| 4 | Story creation | Important topics and keywords: V, M; Infographics: J, G; Comparative analysis: J, G, M, V |
+| 2 | Data augmentation and final filtering | G, V |
+| 2 | Keywords extraction | V |
+| 3, 4 | Data analysis | Clustering, Sentiment analysis: J, G<br/>Keyword frequency: V, M<br/> Examples to compare from a study: J, G, M, V |
+| 4 | Story creation | Important topics and keywords: V, M<br/> Infographics: J, G<br/> Comparative analysis: J, G, M, V |
 
 \* G = Gojko, J = Jana, M = Miloš, V = Vuk
 
