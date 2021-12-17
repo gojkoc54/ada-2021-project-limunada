@@ -56,28 +56,32 @@ https://vukvukovic.github.io/limunADA-datastory/
 
 ## Contributions of our team members
 
-The planned work on the project has been divided into 4 weeks and is shown in the table.
-
 | Week | Milestone | Responsibility \* |
 | --- | --- | --- |
-| 1 | Data cleaning and initial filtering | J, M |
-| 2 | Data augmentation and final filtering | G, V |
-| 2 | Keywords extraction | V |
-| 3, 4 | Data analysis | Clustering, Sentiment analysis: J, G<br/>Keyword frequency: V, M<br/> Examples to compare from a study: J, G, M, V |
-| 4 | Story creation | Important topics and keywords: V, M<br/> Infographics: J, G<br/> Comparative analysis: J, G, M, V |
+| 1 | Data cleaning, filtering and augmentation | M, V |
+| 2 | LDA topic modelling | G, V |
+| 3 | LDA cluster analysis | J, M |
+| 4 | SBERT quote-topic categorization | G, J |
+| 5 | Analysis and visualization of obtained results | J, M |
+| 6 | Code organization and cleaning | G |
+| 7 | Data storytelling | J, V |
+| 8 | Website | V |
 
 \* G = Gojko, J = Jana, M = Miloš, V = Vuk
 
 ## References
 
-[1] [https://www.pewresearch.org/politics/2019/12/17/views-of-the-major-problems-facing-the-country/](https://www.pewresearch.org/politics/2019/12/17/views-of-the-major-problems-facing-the-country/)
+- [Quotebank Dataset](https://zenodo.org/record/4277311#.Yb0QV73MIUF)
 
-[2] [https://www.sbert.net/](https://www.sbert.net/)
+- [SBERT (Sentence-BERT)](https://www.sbert.net/)
 
-[3] [https://huggingface.co/sentence-transformers](https://huggingface.co/sentence-transformers)
+- [Huggingface SBERT](https://huggingface.co/sentence-transformers)
 
-[4] [https://radimrehurek.com/gensim/models/ldamodel.html](https://radimrehurek.com/gensim/models/ldamodel.html)
+- [Gensim LDA model](https://radimrehurek.com/gensim/models/ldamodel.html)
 
-[5] [https://github.com/bmabey/pyLDAvis](https://github.com/bmabey/pyLDAvis)
+- [LDA Visualizer](https://github.com/bmabey/pyLDAvis)
+
+- [Pew Research Center - Views of the major problems facing the country](https://www.pewresearch.org/politics/2019/12/17/views-of-the-major-problems-facing-the-country/)
+
 
 
