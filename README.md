@@ -32,7 +32,7 @@ Since we decided to analyze the quotes as two separate categories - Democrats an
 
 ### Methodology
 
-**_LDA for topic modelling_**
+**_LDA for topic modeling_**
 
 (demonstrated in notebook **_topic_modelling_**)
 
