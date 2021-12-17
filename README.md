@@ -48,7 +48,7 @@ In order to categorize the quotations into certain topics, we applied the SBERT 
 
 Finally, we assemble the results of the two previous points and analyze the topics that have been covered by Republicans and Democrats over time. We don't only detect these topics, but also assess to which extent they were addressed by the members of the two parties. Additionally, we cover our 5th research question by comparing these results to a study by the Pew Research Center, but please read more on that on our data story website.
 
-**_Data story website_**
+### Data story website
 
 To check out our data story website, with much more details, results, and a clear step-by-step walkthrough of our little ADA project journey, please visit the following website:
 
