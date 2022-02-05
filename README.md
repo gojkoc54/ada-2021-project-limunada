@@ -14,6 +14,12 @@ The goal of our project is to investigate what are the topics and the problems t
 4. How much do US parties, Republicans and Democrats, address these problems?
 5. Is it possible to compare the results with the results from previous research done on this matter?
 
+## Data story website
+
+To check out our data story website, with much more details, results, and a clear step-by-step walkthrough of our little ADA project journey, please visit the following website:
+
+https://vukvukovic.github.io/limunADA-datastory/
+
 ## Milestones and methods
 
 ### Data cleaning, filtering and augmentation
@@ -47,12 +53,6 @@ In order to categorize the quotations into certain topics, we applied the SBERT 
 ### Analysis of topics and their presence in the media over time
 
 Finally, we assemble the results of the two previous points and analyze the topics that have been covered by Republicans and Democrats over time. We don't only detect these topics, but also assess to which extent they were addressed by the members of the two parties. Additionally, we cover our 5th research question by comparing these results to a study by the Pew Research Center, but please read more on that on our data story website.
-
-### Data story website
-
-To check out our data story website, with much more details, results, and a clear step-by-step walkthrough of our little ADA project journey, please visit the following website:
-
-https://vukvukovic.github.io/limunADA-datastory/
 
 ## Contributions of our team members
 
